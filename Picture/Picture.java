@@ -1,4 +1,5 @@
 
+       
 /**
  * This class represents a simple picture. You can draw the picture using
  * the draw method. But wait, there's more: being an electronic picture, it
@@ -12,10 +13,10 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
+private Square door;
+    private Square house;
     private Triangle roof;
-    private Circle sun;
+    private Circle window;
 
     /**
      * Constructor for objects of class Picture
@@ -30,29 +31,36 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
-        wall.moveVertical(80);
-        wall.changeSize(100);
-        wall.makeVisible();
+        
 
-        window = new Square();
-        window.changeColor("black");
-        window.moveHorizontal(20);
-        window.moveVertical(100);
-        window.makeVisible();
+        house = new Square();
+        house.changeColor("red");
+        house.changeSize(145);
+        house.moveHorizontal(60);
+        house.moveVertical(90);
+        house.makeVisible();
 
         roof = new Triangle();
-        roof.changeSize(50, 140);
-        roof.moveHorizontal(60);
-        roof.moveVertical(70);
+        roof.changeColor("green");
+        roof.changeSize(50, 200);
+        roof.moveHorizontal(130);
+        roof.moveVertical(55);
         roof.makeVisible();
+        
+       door = new Square();
+       door.changeColor("black");
+       door.changeSize(45);
+       door.moveHorizontal(120);
+       door.moveVertical(190);
+       door.makeVisible();
+        
 
-        sun = new Circle();
-        sun.changeColor("yellow");
-        sun.moveHorizontal(180);
-        sun.moveVertical(-10);
-        sun.changeSize(60);
-        sun.makeVisible();
+        window = new Circle();
+        window.changeColor("blue");
+        window.moveHorizontal(80);
+        window.moveVertical(120);
+        window.changeSize(30);
+        window.makeVisible();
     }
 
     /**
@@ -60,12 +68,12 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        if(wall != null)   // only if it's painted already...
+        if(house != null)   // only if it's painted already...
         {
-            wall.changeColor("black");
+            house.changeColor("black");
             window.changeColor("white");
             roof.changeColor("black");
-            sun.changeColor("black");
+            window.changeColor("black");
         }
     }
 
@@ -74,12 +82,12 @@ public class Picture
      */
     public void setColor()
     {
-        if(wall != null)   // only if it's painted already...
+        if(house != null)   // only if it's painted already...
         {
-            wall.changeColor("red");
+            house.changeColor("red");
             window.changeColor("black");
             roof.changeColor("green");
-            sun.changeColor("yellow");
+            window.changeColor("yellow");
         }
     }
 
